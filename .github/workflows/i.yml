@@ -18,6 +18,6 @@ jobs:
           echo "::set-output name=message::This pull request looks good."
       - uses: pwei1018/bcrs-ci-action@v1.0.1
         with:
-          github-token: "${{ secrets.GITHUB_TOKEN }}"
+          github-token: "${{ secrets.YOKEN }}"
           pr-approval: "${{ steps.pr.outputs.approval }}"
           pr-message: "${{ steps.pr.outputs.message }}"
