@@ -9,15 +9,8 @@ jobs:
   example-action:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-      - name: Get PR approval
-        id: pr
-        run: |
-          echo "::set-output name=approval::true"
-          echo "::set-output name=message::This pull request looks good."
-      - uses: pwei1018/bcrs-ci-action@v1.0.1
+      - name: Approve Pull Request
+        uses: juliangruber/approve-pull-request-action@v1.1.1
         with:
-          github-token: "${{ secrets.YOKEN }}"
-          pr-approval: "${{ steps.pr.outputs.approval }}"
-          pr-message: "${{ steps.pr.outputs.message }}"
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          number: 1
