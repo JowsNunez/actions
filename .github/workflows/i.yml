@@ -13,4 +13,4 @@ jobs:
         uses: juliangruber/approve-pull-request-action@v1.1.1
         with:
           github-token: ${{ github.token }}
-          number: ${{ steps.pr-1.outputs.pull-request-number }}
+          number: ${{ github.event.number }}
